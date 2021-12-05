@@ -5,7 +5,10 @@ from streamlit.type_util import data_frame_to_bytes
 import pandas as pd
 from pandas import DataFrame
 
-client = MongoClient("mongodb+srv://st.secrets["myusr"]:st.secrets["mypwd"]@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db_username = st.secrets["myusr"]
+db_pwd= st.secrets["mypwd"]
+
+client = MongoClient("mongodb+srv://db_username:db_pwd@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.get_database("test")
 users = db.get_collection("users")
 
