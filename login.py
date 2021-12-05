@@ -8,7 +8,8 @@ from pandas import DataFrame
 myusr = st.secrets["myusr"]
 mypwd = st.secrets["mypwd"]
 
-client = MongoClient("mongodb+srv://myusr:mypwd@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = MongoClient(f"mongodb+srv://{myusr}:{mypwd}@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+# client = MongoClient("mongodb+srv://john:12345@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.get_database("test")
 users = db.get_collection("users")
 
