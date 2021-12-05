@@ -8,6 +8,9 @@ from pandas import DataFrame
 db_username = st.secrets["myusr"]
 db_pwd= st.secrets["mypwd"]
 
+st.write(db_username)
+st.write(db_pwd)
+
 client = MongoClient("mongodb+srv://db_username:db_pwd@cluster0.vkduz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.get_database("test")
 users = db.get_collection("users")
